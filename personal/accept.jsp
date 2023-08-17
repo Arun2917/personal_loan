@@ -1,0 +1,144 @@
+<%-- 
+    Document   : accept
+    Created on : Jun 17, 2022, 6:35:47 PM
+    Author     : Java
+--%>
+
+
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.Database"%>
+<%@page import="javax.swing.JOptionPane"%>
+<html class="no-js" lang="zxx">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Personal Loan Application</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+        <!-- Web Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+        
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" />
+        <!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/LineIcons.2.0.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon.css" />
+        <link rel="stylesheet" href="css/animate.css" />
+        <link rel="stylesheet" href="css/tiny-slider.css" />
+        <link rel="stylesheet" href="css/glightbox.min.css" />
+        <link rel="stylesheet" href="css/typography.css" />
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            body{
+                background: linear-gradient(#f9faff85, rgb(232 221 221 / 72%)), url(images/banner.jpg);
+                background-attachment:fixed;
+                background-size:cover;
+                background-position:right;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <%
+            String id = "" + session.getAttribute("uid");
+
+            //JOptionPane.showMessageDialog(null, id);
+String rate=request.getParameter("irate");
+        %>
+        <!-- Preloader Start-->
+        <div id="preloader">
+            <div class="iddrak-load"></div>
+        </div>
+        <!-- Preloader End-->
+
+        <!-- Header Start -->
+        <header class="header navbar-area" style="background-color:white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <div class="nav-inner">
+                            <!-- Start Navbar -->
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand style3" href="index.html">
+                                    <img src="images/logo.png" alt="Logo">
+                                </a>
+                                <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin-left: 700px;">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                        <li class="nav-item">
+                                            <a href="userpage.jsp" class="active" aria-label="Toggle navigation">Home</a>
+                                        </li>
+                                        
+                                        <li class="nav-item">
+                                            <a href="index.html" class="active" aria-label="Toggle navigation">Logout</a>
+                                        </li>
+
+                                    </ul>
+                                </div> <!-- navbar collapse -->
+                            </nav>
+                            <!-- End Navbar -->
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </header>
+        <br>
+        <br>
+        
+        
+        <div class="col-md-6 grid-margin stretch-card" style="    margin-top: 80px;margin-left: 300px;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Document  Needed</h4>
+                            <br>
+                            <br>
+                            <form class="forms-sample" action="acceptcheck.jsp" method="post" enctype="multipart/form-data" name="form1">
+        <div class="form-group row">
+                                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label" style="font-size: 20px;color: black;">Id Proof</label>
+                                    <div class="col-sm-9">
+                                        <input  type="file" name="idproof" class="form-control" id="exampleInputEmail2" placeholder="" required="">
+                                    </div>
+                                </div>
+                                                                 
+
+                                    <input type="submit" class="btn btn-gradient-primary mr-2" value="Send" style="background:green">
+                            </form>
+                                    </div>
+                    </div>
+                </div>
+
+
+        
+        <a href="#" class="scroll-top">
+            <i class="lni lni-chevron-up"></i>
+        </a>
+        <!-- Scroll Top End -->
+
+        <!-- JS here -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/tiny-slider.js"></script>
+        <script src="js/glightbox.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
